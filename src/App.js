@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Banniere from './components/Banniere';
+import Carte from './components/Carte';
+import Entete from './components/Entete';
+import Filtre from './components/Filtre';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      {/* Ajout de la navigation de Dior */}
+      <Entete/>
+      <Banniere/>
+      <Filtre/>
+      <Carte/>
     </div>
   );
 }
