@@ -8,7 +8,7 @@ const Formulaire = (props) => {
     const longueurMax = 130;
     const [contenuSaisi, setContenuSaisi] = useState("");
     const [reste, setReste] = useState(longueurMax);
-    const [titre, setTitre] = useState("");
+    const [title, setTitle] = useState("");
 
     const GestionDescription = (e) => {
         setContenuSaisi(e.target.value);
@@ -16,13 +16,13 @@ const Formulaire = (props) => {
     }
 
     const GestionTitre = (e) => {
-        setTitre(e.target.value);
+        setTitle(e.target.value);
     }
 
     const Envoie = (e) => {
         e.preventDefault();
         axios.post("https://tranquil-castle-97481.herokuapp.com/public/api/dreamteam",
-            { titre: titre, description: contenuSaisi, statut: true },
+            { titre: title, description: contenuSaisi, statut: true },
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const Formulaire = (props) => {
                 <input
                     type="text"
                     className="form-control"
-                    name="titre"
+                    name="title"
                     placeholder="Entrez le titre du brief"
                     aria-describedby="titreHelp"
                     onChange={GestionTitre}

@@ -7,10 +7,10 @@ const CarteStyle = styled.div`
     h6{
         color: #0f5132;
     }
-    #approuve{
+    #valider{
         visibility:hidden;
     }
-    #desapprouve{
+    #refuser{
         visibility:visible;
     }
 
@@ -24,10 +24,10 @@ const CarteStyle = styled.div`
         h6{
             color: #ce0033;
         }
-        #approuve{
+        #valider{
             visibility:visible;
         }
-        #desapprouve{
+        #refuser{
             visibility:hidden;
         }
     `}
