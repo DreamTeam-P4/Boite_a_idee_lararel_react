@@ -1,6 +1,39 @@
-const Formulaire = () => {
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
+
+
+const Formulaire = (props) => {
+
+    const longueurMax = 130;
+    const [contenuSaisi, setContenuSaisi] = useState("");
+    const [reste, setReste] = useState(longueurMax);
+    const [titre, setTitre] = useState("");
+
+    const GestionDescription = (e) => {
+        setContenuSaisi(e.target.value);
+        setReste(longueurMax - contenuSaisi.length);
+    }
+
+    const GestionTitre = (e) => {
+        setTitre(e.target.value);
+    }
+
+    const Envoie = (e) => {
+        e.preventDefault();
+        axios.post("https://tranquil-castle-97481.herokuapp.com/public/api/dreamteam",
+            { titre: titre, description: contenuSaisi, statut: true },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
+            }
+        )
+    }
+
     return (
-        <form>
+        <form onSubmit={Envoie}>
             <div className="mb-4">
                 <label htmlFor="titre" className="form-label">Titre</label>
                 <input
@@ -9,26 +42,28 @@ const Formulaire = () => {
                     name="titre"
                     placeholder="Entrez le titre du brief"
                     aria-describedby="titreHelp"
+                    onChange={GestionTitre}
                 />
             </div>
             <div className="mb-3">
-                <label htmlFor="suggestion" className="form-label pt-4">
+                <label htmlFor="description" className="form-label pt-4">
                     Descriptif</label>
                 <textarea
                     className="form-control"
-                    id="suggestion"
-                    name="suggestion"
+                    id="description"
+                    name="description"
                     rows="10"
                     placeholder="Entrez vos suggestions"
+                    onChange={GestionDescription}
                 ></textarea>
-                <p className="pt-4">
-                    Nombre de mots saisi / 130
+                <p className="pt-4" style={{ color: (reste < 0) ? "red" : "green" }}>
+                    Nombre de mots saisi {contenuSaisi.length} / 130
                 </p>
-                <p id="text-restant" className="pt-4">Nombre de mots restants</p>
+                <p id="text-restant" className="pt-4">Nombre de mots restants {reste}</p>
             </div>
             <button
                 type="submit"
-                id="btn-suggestion"
+                id="btn-description"
                 className="btn btn-danger float-end"
             >
                 Envoyer
