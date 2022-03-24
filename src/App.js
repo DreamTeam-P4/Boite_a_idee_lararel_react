@@ -5,19 +5,20 @@ import Entete from './components/Entete';
 import Filtre from './components/Filtre';
 import { useRecoilState } from 'recoil';
 import { descriptions } from "./atoms/stateManagement";
+import Navbar from './components/Navbar';
 
 
 function App() {
 
-  const [data, setData] = useRecoilState(descriptions);
-
   return (
-    <div className="App container">
+    <div className="App container-fluid">
       {/* Ajout de la navigation de Dior */}
-      <Entete/>
-      <Banniere/>
-      <Filtre/>
-      <AfficherCarte/>
+      <Navbar />
+      <Entete />
+      <Banniere />
+      <Filtre />
+      <AfficherCarte />
+
     </div>
   );
 }

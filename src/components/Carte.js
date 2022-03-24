@@ -2,27 +2,27 @@ import React, { useState } from 'react';
 import CarteStyle from "../style/style";
 import axios from 'axios';
 
-const Carte = ({donnees}) => {
-    const [status, setStatus] = useState(donnees.status); 
+const Carte = ({ donnees }) => {
+    const [status, setStatus] = useState(donnees.status);
 
-    const validationCarte = () =>{
-        axios.patch(
+    const validationCarte = () => {
+        axios.put(
             `https://tranquil-castle-97481.herokuapp.com/public/api/dreamteam/${donnees.id}`,
             { status: true }
         )
-        .then(() => setStatus(true))
+            .then(() => setStatus(true))
     }
 
     const refusCarte = () => {
-        axios.patch(
+        axios.put(
             `https://tranquil-castle-97481.herokuapp.com/public/api/dreamteam/${donnees.id}`,
             { status: false }
         )
-        .then(() => setStatus(false))
+            .then(() => setStatus(false))
     }
 
     return (
-        <CarteStyle className="card card-idea m-2" resultat= {status}>
+        <CarteStyle className="card card-idea m-2" resultat={status}>
 
             <div className="card-body flex-column d-flex justify-content-between">
                 <div className="card-block-titre">
@@ -50,5 +50,5 @@ const Carte = ({donnees}) => {
         </CarteStyle>
     );
 }
- 
+
 export default Carte;
