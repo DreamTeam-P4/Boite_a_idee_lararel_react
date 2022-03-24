@@ -22,7 +22,7 @@ const Formulaire = (props) => {
     const Envoie = (e) => {
         e.preventDefault();
         axios.post("https://tranquil-castle-97481.herokuapp.com/public/api/dreamteam",
-            { titre: title, description: contenuSaisi, statut: true },
+            { title: title, description: contenuSaisi, statut: true },
             {
                 headers: {
                     'Content-Type': 'application/json',
