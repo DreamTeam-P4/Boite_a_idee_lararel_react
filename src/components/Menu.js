@@ -11,8 +11,8 @@ const Menu = () => {
             <Navbar.Collapse>
                 <Nav className='ms-5'>
                     <NavDropdown title="Nos Pages">
-                        <NavDropdown.Item href="Nos Pages/page-ide">Pages à idée</NavDropdown.Item>
-                        <NavDropdown.Item href="Nos Pages/page-statistique">Pages statistique</NavDropdown.Item>
+                        <NavDropdown.Item href="/">Pages à idée</NavDropdown.Item>
+                        <NavDropdown.Item href="/statistique">Pages statistique</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
 

@@ -3,22 +3,17 @@ import AfficherCarte from './components/AfficherCarte';
 import Banniere from './components/Banniere';
 import Entete from './components/Entete';
 import Filtre from './components/Filtre';
-import { useRecoilState } from 'recoil';
-import { descriptions } from "./atoms/stateManagement";
-import Navbar from './components/Navbar';
+import Menu from './components/Menu';
 
 
 function App() {
 
   return (
-    <div className="App container-fluid">
-      {/* Ajout de la navigation de Dior */}
-      <Navbar />
+    <div className="App container-fluide">
+      <Menu />
       <Entete />
       <Banniere />
       <Filtre />
-      <AfficherCarte />
-
     </div>
   );
 }
