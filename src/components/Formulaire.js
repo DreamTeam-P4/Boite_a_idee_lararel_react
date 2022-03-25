@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, setState } from "react";
 import axios from "axios";
 
 
@@ -30,6 +30,14 @@ const Formulaire = (props) => {
                 }
             }
         )
+
+        ResetForm();
+
+    }
+
+    const ResetForm = (e) => {
+        
+
     }
 
     return (
