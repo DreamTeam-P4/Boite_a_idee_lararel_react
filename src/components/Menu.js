@@ -12,10 +12,9 @@ const Menu = () => {
                 <Nav className='ms-5'>
                     <NavDropdown title="Nos Pages">
                         <NavDropdown.Item href="/">Pages à idée</NavDropdown.Item>
-                        <NavDropdown.Item href="#Statistique">Pages statistique</NavDropdown.Item>
+                        <NavDropdown.Item href="Statistique">Pages statistique</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-
             </Navbar.Collapse>
             <form className='mb-3'>
                 <input className='form-control w-99' type="search" placeholder="Search" aria-label="Search" />

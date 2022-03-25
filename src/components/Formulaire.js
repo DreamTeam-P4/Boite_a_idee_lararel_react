@@ -1,5 +1,5 @@
 import React from "react";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 
 
@@ -14,7 +14,6 @@ const Formulaire = (props) => {
         setContenuSaisi(e.target.value);
         setReste(longueurMax - contenuSaisi.length);
     }
-
     const GestionTitre = (e) => {
         setTitle(e.target.value);
     }
@@ -29,7 +28,7 @@ const Formulaire = (props) => {
                     'X-Requested-With': 'XMLHttpRequest',
                 }
             }
-        ).then(res =>{
+        ).then(res => {
             e.target.reset();
         })
     }
@@ -73,5 +72,5 @@ const Formulaire = (props) => {
         </form>
     );
 }
-
 export default Formulaire;
+

@@ -29,15 +29,6 @@ const Filtre = () => {
         console.log('je la moi aussi');
         let value = true;
         setsearchTerm1(value);
-
-        {
-            data && data
-                .filter((donnees) => {
-                    if (donnees.status == true) {
-                        console.log(donnees.status);
-                    }
-                })
-        }
     };
 
     return (

@@ -8,6 +8,4 @@ const Entete = () => {
         </div>
     );
 }
-
-
 export default Entete;
