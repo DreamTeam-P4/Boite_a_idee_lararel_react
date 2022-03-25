@@ -41,6 +41,7 @@ const Formulaire = (props) => {
     }
 
     return (
+
         <form onSubmit={Envoie}>
             <div className="mb-4">
                 <label htmlFor="titre" className="form-label">Titre</label>

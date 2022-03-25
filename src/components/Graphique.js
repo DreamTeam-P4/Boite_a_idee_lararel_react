@@ -11,10 +11,11 @@ const options = {
     is3D: false,
 };
 
+
 function Graph() {
     const data = [
         ["Task", "Hours per Day"],
-        ["Valider", 0],
+        ["Valider", 4],
         ["Refuser", 4],
     ];
     return (
@@ -27,6 +28,5 @@ function Graph() {
         />
     );
 }
-
 
 export default Graph;
