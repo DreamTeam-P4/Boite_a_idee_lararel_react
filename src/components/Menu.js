@@ -12,7 +12,7 @@ const Menu = () => {
                 <Nav className='ms-5'>
                     <NavDropdown title="Nos Pages">
                         <NavDropdown.Item href="/">Pages à idée</NavDropdown.Item>
-                        <NavDropdown.Item href="/statistique">Pages statistique</NavDropdown.Item>
+                        <NavDropdown.Item href="#Statistique">Pages statistique</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
 

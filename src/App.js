@@ -3,6 +3,7 @@ import AfficherCarte from './components/AfficherCarte';
 import Banniere from './components/Banniere';
 import Entete from './components/Entete';
 import Filtre from './components/Filtre';
+import Graph from './components/Graphique';
 import Menu from './components/Menu';
 
 
@@ -14,6 +15,7 @@ function App() {
       <Entete />
       <Banniere />
       <Filtre />
+      <Graph />
     </div>
   );
 }

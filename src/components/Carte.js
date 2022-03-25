@@ -27,7 +27,8 @@ const Carte = ({ donnees }) => {
 
             <div className="card-body flex-column d-flex justify-content-between">
                 <div className="card-block-titre">
-                    <h5 className="card-title fw-bold">{donnees.title} {donnees.status}</h5>
+                    <h5 className="card-title fw-bold">{donnees.title}</h5>
+                    {console.log(donnees.status)}
                     <h6 className="card-subtitle mb-2 text-gris">
                         {status ? "Valider" : "Refuser"}
                     </h6>

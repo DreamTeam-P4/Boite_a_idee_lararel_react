@@ -18,16 +18,26 @@ const Filtre = () => {
     }, []);
 
 
-    const handleSearchTerm = (e) => {
+    const filtrerefuser = (e) => {
         console.log('je suis la');
-        let value = 'Yousouph';
+        let value = false;
         setsearchTerm(value);
+
     };
 
-    const handleSearchTerm1 = (e) => {
+    const filtreaccepter = (e) => {
         console.log('je la moi aussi');
-        let value = 'Cheikh';
+        let value = true;
         setsearchTerm1(value);
+
+        {
+            data && data
+                .filter((donnees) => {
+                    if (donnees.status == true) {
+                        console.log(donnees.status);
+                    }
+                })
+        }
     };
 
     return (
@@ -35,10 +45,10 @@ const Filtre = () => {
             <div className="row">
                 {data && data
                     .filter((donnees) => {
-                        return donnees.title.includes(searchTerm)
+                        return donnees.status.toString().includes(searchTerm)
                     })
                     .filter((donnees) => {
-                        return donnees.title.includes(searchTerm1)
+                        return donnees.status.toString().includes(searchTerm1)
                     })
                     .map(donnees => {
                         return <Carte key={donnees.id} donnees={donnees} />
@@ -50,11 +60,11 @@ const Filtre = () => {
                     <div>
                         <a href='/'>
                             <button type="button" className="filtre-tous btn  me-2 btn-outline-secondary btn">Tous</button></a>
-                        <button type="button" onClick={handleSearchTerm} className="filtre-refuse btn btn-outline-danger btn me-2">Refuser</button>
-                        <button type="button" onClick={handleSearchTerm1} className="filtre-accepte btn btn-outline-success btn">Valider</button>
+                        <button type="button" onClick={filtrerefuser} className="filtre-refuse btn btn-outline-danger btn me-2">Refuser</button>
+                        <button type="button" onClick={filtreaccepter} className="filtre-accepte btn btn-outline-success btn">Valider</button>
                     </div>
                 </div>
-                {/* Ajout des cartes de Youssouph */}
+
             </div>
 
         </>

@@ -25,6 +25,7 @@ function Graph() {
             height="400px"
             data={data}
             options={options}
+            id="Statisques"
         />
     );
 }
