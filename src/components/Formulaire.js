@@ -1,14 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
 import axios from "axios";
 
 
 const Formulaire = (props) => {
 
     const longueurMax = 130;
-    const [contenuSaisi, setContenuSaisi] = useState("");
+    let [contenuSaisi, setContenuSaisi] = useState("");
     const [reste, setReste] = useState(longueurMax);
-    const [title, setTitle] = useState("");
+    let [title, setTitle] = useState("");
 
     const GestionDescription = (e) => {
         setContenuSaisi(e.target.value);
@@ -29,11 +29,12 @@ const Formulaire = (props) => {
                     'X-Requested-With': 'XMLHttpRequest',
                 }
             }
-        )
+        ).then(res =>{
+            e.target.reset();
+        })
     }
 
     return (
-
         <form onSubmit={Envoie}>
             <div className="mb-4">
                 <label htmlFor="titre" className="form-label">Titre</label>
