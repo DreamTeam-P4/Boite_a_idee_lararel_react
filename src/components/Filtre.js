@@ -49,7 +49,7 @@ const Filtre = () => {
             <div className="filtre container">
                 <div className="d-flex justify-content-between align-items-center my-5 float-end">
                     <div>
-                        <a href='/'>
+                        <a href='/Boite_a_idee_lararel_react'>
                             <button type="button" className="filtre-tous btn  me-2 btn-outline-secondary btn">Tous</button></a>
                         <button type="button" onClick={filtrerefuser} className="filtre-refuse btn btn-outline-danger btn me-2">Refuser</button>
                         <button type="button" onClick={filtreaccepter} className="filtre-accepte btn btn-outline-success btn">Valider</button>
